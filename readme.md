@@ -1,12 +1,12 @@
 
 
-> 认真写自己的工具库，包含一些常用方法 [(链接地址)](http:)
+> 认真写自己的工具库，包含一些常用方法 [(码云链接地址)](https://gitee.com/lcbzm/lin-js.git)
 
 ```bash
 
 # npm下载js-lin
 $ npm install js-lin
-#or
+# or
 $ cnpm install js-lin
 ```
 
