@@ -22,22 +22,22 @@ $ npm install js-lin
 <tr>
     <td>1</td>
 	<td>
-	<code>
+	<pre style="background-color: transparent;">
 	import { isArray } from 'js-lin';
 	let arr=['1','2','3'];
 	isArray(arr);// true
-	</code>
+	</pre>
 	</td> 
 	<td>判断是否为数组</td>
 </tr>
 <tr>
     <td>2</td>
 	<td>
-	<code>
+	<pre style="background-color: transparent;">
 	import { isObj } from 'js-lin';
 	let obj = { a: 1 };
 	isObj(obj);// true
-	</code>
+	</pre>
 	</td> 
 	<td>判断是否是对象</td>
 </tr>
@@ -70,7 +70,7 @@ $ npm install js-lin
 	<td>
 	<code>
 	import { isEmptyObj } from 'js-lin';
-	let o = {}
+	let o = {};
 	isEmptyObj(o);// true
 	</code>
 	</td> 
