@@ -1,6 +1,6 @@
 
 
-> 方法:借鉴底线库的工具框架，包含一些常用方法，在兼容AMD模式的同时，兼顾了CMD [(链接地址)](http:)
+> 方法:认真写自己的工具库，包含一些常用方法 [(链接地址)](http:)
 
 ```bash
 
@@ -16,15 +16,21 @@ $ npm install lin-js
 
 <thead>
 <tr>
-        <td>序号</td>
-	<td>方法名称</td>
+    <td>序号</td>
 	<td>使用方法</td>
+	<td>描述</td>
 </tr>
 </thead>
 <tbody>	
 <tr>
-        <td>1</td>
-	<td>import {isArray} from 'lin-js'</td> 
+    <td>1</td>
+	<td>
+	```bash
+	import { isArray } from 'lin-js';
+	let arr=['1','2','3'];
+	isArray(arr);// true
+	```
+	</td> 
 	<td>判断是否为数组</td>
 </tr>
 </tbody>
