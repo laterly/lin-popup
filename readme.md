@@ -3,11 +3,8 @@
 > 认真写自己的工具库，包含一些常用方法 [(码云链接地址)](https://gitee.com/lcbzm/lin-js.git)
 
 ```bash
-
-# npm下载js-lin
+# npm下载js-lin库
 $ npm install js-lin
-# or
-$ cnpm install js-lin
 ```
 
 
