@@ -44,35 +44,35 @@ $ npm install js-lin
 <tr>
     <td>3</td>
 	<td>
-	<code>
+	<pre>
 	import { isFun } from 'js-lin';
 	function a() { 
     	console.log(123);
 	}
 	isFun(a);// true
-	</code>
+	</pre>
 	</td> 
 	<td>判断是否是方法</td>
 </tr>
 <tr>
     <td>4</td>
 	<td>
-	<code>
+	<pre>
 	import { isNum } from 'js-lin';
 	let b = 1;
 	isNum(b);// true
-	</code>
+	</pre>
 	</td> 
 	<td>判断是否是方法</td>
 </tr>
 <tr>
     <td>5</td>
 	<td>
-	<code>
+	<pre>
 	import { isEmptyObj } from 'js-lin';
 	let o = {};
 	isEmptyObj(o);// true
-	</code>
+	</pre>
 	</td> 
 	<td>判断是否是空对象</td>
 </tr>
