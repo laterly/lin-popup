@@ -24,7 +24,7 @@ $ npm install lin-js
 <tbody>	
 <tr>
         <td>1</td>
-	<td>122</td> 
+	<td>import {isArray} from 'lin-js'</td> 
 	<td>启用Mustache.js类型模板语法，使用{{= }} 这样的语法</td>
 </tr>
 </tbody>
