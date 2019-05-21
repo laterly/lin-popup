@@ -5,7 +5,7 @@
 ```bash
 
 # 下载依赖
-$ npm install lin-js
+$ npm install js-lin
 
 ```
 
