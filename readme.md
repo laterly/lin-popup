@@ -1,12 +1,13 @@
 
 
-> 方法:认真写自己的工具库，包含一些常用方法 [(链接地址)](http:)
+> 认真写自己的工具库，包含一些常用方法 [(链接地址)](http:)
 
 ```bash
 
-# 下载依赖
+# npm下载js-lin
 $ npm install js-lin
-
+#or
+$ cnpm install js-lin
 ```
 
 
