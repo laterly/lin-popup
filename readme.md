@@ -11,7 +11,7 @@ $ npm install lin-js
 
 
 
-# lin-js 
+# js-lin
 <table>
 
 <thead>
@@ -26,12 +26,47 @@ $ npm install lin-js
     <td>1</td>
 	<td>
 	<pre>
-	import { isArray } from 'lin-js';
+	import { isArray } from 'js-lin';
 	let arr=['1','2','3'];
 	isArray(arr);// true
 	</pre>
 	</td> 
 	<td>判断是否为数组</td>
+</tr>
+<tr>
+    <td>2</td>
+	<td>
+	<pre>
+	import { isObj } from 'js-lin';
+	let obj = { a: 1 }
+	isObj(obj);// true
+	</pre>
+	</td> 
+	<td>判断是否是对象</td>
+</tr>
+<tr>
+    <td>3</td>
+	<td>
+	<pre>
+	import { isFun } from 'js-lin';
+	function a() { 
+    	console.log(123);
+	}
+	isFun(a);// true
+	</pre>
+	</td> 
+	<td>判断是否是方法</td>
+</tr>
+<tr>
+    <td>4</td>
+	<td>
+	<pre>
+	import { isNum } from 'js-lin';
+	let b = 1;
+	isNum(b);// true
+	</pre>
+	</td> 
+	<td>判断是否是方法</td>
 </tr>
 </tbody>
 </table>
