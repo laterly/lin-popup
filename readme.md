@@ -30,7 +30,7 @@ $ npm install js-lin
 	</td> 
 	<td>判断是否为数组</td>
 </tr>
-<tr>
+<tr style="background-color: transparent;">
     <td>2</td>
 	<td>
 	<pre style="background-color: transparent;">
