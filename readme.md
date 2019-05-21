@@ -23,9 +23,9 @@ $ npm install js-lin
     <td>1</td>
 	<td>
 	<pre>
-	<code>import { isArray } from 'js-lin';</code>
-	<code>let arr=['1','2','3'];</code>
-	<code>isArray(arr);// true</code>
+	import { isArray } from 'js-lin';
+	let arr=['1','2','3'];
+	isArray(arr);// true
 	</pre>
 	</td> 
 	<td>判断是否为数组</td>
@@ -34,9 +34,9 @@ $ npm install js-lin
     <td>2</td>
 	<td>
 	<pre>
-	<code>import { isObj } from 'js-lin';</code>
-	<code>let obj = { a: 1 };</code>
-	<code>isObj(obj);// true</code>
+	import { isObj } from 'js-lin';
+	let obj = { a: 1 };
+	isObj(obj);// true
 	</pre>
 	</td> 
 	<td>判断是否是对象</td>
