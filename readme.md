@@ -22,7 +22,7 @@ $ npm install js-lin
 <tr>
     <td>1</td>
 	<td>
-	<pre style="background-color: transparent;">
+	<pre>
 	import { isArray } from 'js-lin';
 	let arr=['1','2','3'];
 	isArray(arr);// true
@@ -30,10 +30,10 @@ $ npm install js-lin
 	</td> 
 	<td>判断是否为数组</td>
 </tr>
-<tr style="background-color: transparent;">
+<tr>
     <td>2</td>
 	<td>
-	<pre style="background-color: transparent;">
+	<pre>
 	import { isObj } from 'js-lin';
 	let obj = { a: 1 };
 	isObj(obj);// true
