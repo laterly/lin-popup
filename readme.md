@@ -1,34 +1,32 @@
 
 
-> 方法:包含一些工具常用方法，有时间就会更新常用工具方法，在兼容AMD模式的同时，兼顾了CMD
+> 方法:借鉴底线库的工具框架，包含一些常用方法，在兼容AMD模式的同时，兼顾了CMD [(链接地址)](http:)
 
 ```bash
 
-# npm
+# 下载依赖
 $ npm install lin-js
 
+```
 
 
-> 开发开始日期2016-10-18
 
-# kit.js 
+# lin-js 
 <table>
 
 <thead>
 <tr>
-    <td>序号</td>
+        <td>序号</td>
 	<td>方法名称</td>
 	<td>使用方法</td>
 </tr>
 </thead>
-<tbody>
-
+<tbody>	
 <tr>
-    <td>1</td>
-	<td >import {isArray} from 'lin-js'</td> 
-	<td>判断是否为数组</td>
+        <td>1</td>
+	<td>122</td> 
+	<td>启用Mustache.js类型模板语法，使用{{= }} 这样的语法</td>
 </tr>
-
 </tbody>
 </table>
 
