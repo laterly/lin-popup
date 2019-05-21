@@ -65,6 +65,17 @@ $ npm install js-lin
 	</td> 
 	<td>判断是否是方法</td>
 </tr>
+<tr>
+    <td>5</td>
+	<td>
+	<code>
+	import { isEmptyObj } from 'js-lin';
+	let o = {}
+	isEmptyObj(o);// true
+	</code>
+	</td> 
+	<td>判断是否是空对象</td>
+</tr>
 </tbody>
 </table>
 
