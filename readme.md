@@ -13,7 +13,11 @@ $ npm install lin-js
 
 # js-lin
 <table>
-
+<style>
+.markdown-body .highlight pre, .markdown-body pre{
+	    background-color: transparent;
+}
+</style>
 <thead>
 <tr>
     <td>序号</td>
@@ -38,7 +42,7 @@ $ npm install lin-js
 	<td>
 	<pre>
 	import { isObj } from 'js-lin';
-	let obj = { a: 1 }
+	let obj = { a: 1 };
 	isObj(obj);// true
 	</pre>
 	</td> 
