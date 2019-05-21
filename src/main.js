@@ -1,6 +1,5 @@
-function isArray(){
-  console.log('111');
-}
-export default {
+import isArray from './isArray.js'
+
+export {
   isArray
-};
+}

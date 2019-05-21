@@ -1,2 +1,4 @@
-const a = 1
+function a(){
+    console.log('lalal');
+}
 export default a
