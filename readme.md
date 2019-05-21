@@ -25,11 +25,11 @@ $ npm install lin-js
 <tr>
     <td>1</td>
 	<td>
-	```bash
+	<pre>
 	import { isArray } from 'lin-js';
 	let arr=['1','2','3'];
 	isArray(arr);// true
-	```
+	</pre>
 	</td> 
 	<td>判断是否为数组</td>
 </tr>
