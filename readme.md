@@ -1,5 +1,3 @@
-
-
 > 认真写自己的工具库，包含一些常用方法 [(码云链接地址)](https://gitee.com/lcbzm/lin-js.git)
 
 ```bash
@@ -7,9 +5,8 @@
 $ npm install js-lin
 ```
 
-
-
 # js-lin
+
 <table>
 <thead>
 <tr>
@@ -18,7 +15,55 @@ $ npm install js-lin
 	<td>描述</td>
 </tr>
 </thead>
-<tbody>	
+<tbody>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { publish } from 'js-lin';
+	
+	function event(data) {
+            console.log(data);
+        }
+    //订阅事件a
+    publish.on('a', (data) => {
+        event(data)
+    });
+    //触发事件a
+    publish.emit('a', '我是第1次调用的参数');
+	
+	//在vue中Index.vue和Main.vue通信
+	Index.vue:
+export default {
+	created() {
+		//订阅事件a
+    	publish.on('a', this.event);
+ 	},
+	methods: {
+		event(data){
+			console.log('事件'+data);
+		}
+  	},
+	beforeDestroy() {
+		publish.remove('a', this.event);
+ 	},
+};
+	Main.vue:
+export default {
+	created() {
+		this.emitEvent();
+ 	},
+	methods: {
+		emitEvent(){
+			publish.emit('a', '参数');
+		}
+  	}
+};
+    </pre>
+    </td>
+    <td>订阅发布js，组件通信</td>
+
+</tr>	
 <tr>
     <td>1</td>
 	<td>
@@ -78,4 +123,3 @@ $ npm install js-lin
 </tr>
 </tbody>
 </table>
-

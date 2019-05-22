@@ -128,6 +128,7 @@ exports.isEmptyObj = isEmptyObj;
 exports.isFun = isFun;
 exports.isNum = isNum;
 exports.isObj = isObj;
+exports.publish = void 0;
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
@@ -138,6 +139,103 @@ function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.itera
   e = l.getElementsByTagName(i)[0];
   e.parentNode.insertBefore(v, e);
 })(document, 'script');
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+var Public =
+/*#__PURE__*/
+function () {
+  function Public() {
+    _classCallCheck(this, Public);
+
+    this.handlers = {};
+  }
+
+  _createClass(Public, [{
+    key: "on",
+    value: function on(eventType, handler) {
+      var self = this;
+
+      if (!(eventType in self.handlers)) {
+        self.handlers[eventType] = [];
+      }
+
+      self.handlers[eventType].push(handler);
+      return this;
+    } // 触发事件(发布事件)
+
+  }, {
+    key: "emit",
+    value: function emit(eventType) {
+      var self = this;
+      var handlerArgs = Array.prototype.slice.call(arguments, 1);
+
+      for (var i = 0; i < self.handlers[eventType].length; i++) {
+        self.handlers[eventType][i].apply(self, handlerArgs);
+      }
+
+      return self;
+    } // 删除订阅事件
+
+  }, {
+    key: "off",
+    value: function off(eventType, handler) {
+      var currentEvent = this.handlers[eventType];
+      var len = 0;
+
+      if (currentEvent) {
+        len = currentEvent.length;
+
+        for (var i = len - 1; i >= 0; i--) {
+          if (currentEvent[i] === handler) {
+            currentEvent.splice(i, 1);
+          }
+        }
+      }
+
+      return this;
+    }
+  }]);
+
+  return Public;
+}();
+
+var publish = new Public();
+exports.publish = publish;
 
 function isArray(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
@@ -153,20 +251,6 @@ function isFun(fun) {
 
 function isNum(num) {
   return Object.prototype.toString.call(num) == "[object Number]";
-}
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
-
-  return _typeof(obj);
 }
 
 function isEmptyObj(o) {
