@@ -124,7 +124,7 @@ function isArray(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 }
 
-function isObj(obj) {
+function isObject(obj) {
   return Object.prototype.toString.call(obj) == "[object Object]";
 }
 
@@ -132,7 +132,7 @@ function isFun(fun) {
   return Object.prototype.toString.call(fun) == "[object Function]";
 }
 
-function isNum(num) {
+function isNumber(num) {
   return Object.prototype.toString.call(num) == "[object Number]";
 }
 
@@ -149,4 +149,4 @@ function isEmptyObj(o) {
   return false;
 }
 
-export { isArray, isEmptyObj, isFun, isNum, isObj, publish, queryString, trimStr };
+export { isArray, isEmptyObj, isFun, isNumber, isObject, publish, queryString, trimStr };

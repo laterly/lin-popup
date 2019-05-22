@@ -126,8 +126,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.isArray = isArray;
 exports.isEmptyObj = isEmptyObj;
 exports.isFun = isFun;
-exports.isNum = isNum;
-exports.isObj = isObj;
+exports.isNumber = isNumber;
+exports.isObject = isObject;
 exports.queryString = queryString;
 exports.trimStr = trimStr;
 exports.publish = void 0;
@@ -267,7 +267,7 @@ function isArray(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 }
 
-function isObj(obj) {
+function isObject(obj) {
   return Object.prototype.toString.call(obj) == "[object Object]";
 }
 
@@ -275,7 +275,7 @@ function isFun(fun) {
   return Object.prototype.toString.call(fun) == "[object Function]";
 }
 
-function isNum(num) {
+function isNumber(num) {
   return Object.prototype.toString.call(num) == "[object Number]";
 }
 
@@ -310,10 +310,10 @@ var b = 1;
 var o = {};
 console.log((0, _bundle.isArray)(arr)); // true
 
-console.log((0, _bundle.isObj)(obj)); // true
+console.log((0, _bundle.isObject)(obj)); // true
 
 console.log((0, _bundle.isFun)(a));
-console.log((0, _bundle.isNum)(b));
+console.log((0, _bundle.isNumber)(b));
 console.log((0, _bundle.isEmptyObj)(o));
 var str = ' 1 25 ';
 console.log((0, _bundle.trimStr)(str)); //1 25

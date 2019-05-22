@@ -96,9 +96,9 @@ $ npm install js-lin
     <td>2</td>
 	<td>
 	<pre>
-	import { isObj } from 'js-lin';
+	import { isObject } from 'js-lin';
 	let obj = { a: 1 };
-	isObj(obj);// true
+	isObject(obj);// true
 	</pre>
 	</td> 
 	<td>判断是否是对象</td>
@@ -120,12 +120,23 @@ $ npm install js-lin
     <td>4</td>
 	<td>
 	<pre>
-	import { isNum } from 'js-lin';
+	import { isNumber } from 'js-lin';
 	let b = 1;
-	isNum(b);// true
+	isNumber(b);// true
 	</pre>
 	</td> 
 	<td>判断是否是方法</td>
+</tr>
+<tr>
+    <td>4</td>
+	<td>
+	<pre>
+	import { isString } from 'js-lin';
+	let b = '123';
+	isString(b);// true
+	</pre>
+	</td> 
+	<td>判断是否是字符串</td>
 </tr>
 <tr>
     <td>5</td>

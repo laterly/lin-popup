@@ -1,4 +1,4 @@
-function isObj(obj) {
+function isObject(obj) {
   return Object.prototype.toString.call(obj) == "[object Object]";
 }
-export default isObj;
+export default isObject;
