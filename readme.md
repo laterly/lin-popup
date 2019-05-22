@@ -10,27 +10,24 @@ $ npm install js-lin
 
 
 # js-lin
-<table>
-<thead>
-<tr>
-    <td>序号</td>
-	<td>使用方法</td>
-	<td>描述</td>
-</tr>
-</thead>
-<tbody>	
-<tr>
-    <td>1</td>
-	<td>
+<div>
+<div>
+    <span>序号</span>
+	<span>使用方法</span>
+	<span>描述</span>
+</div>
+<div>
+    <span>1</span>
+	<span>
 	<pre>
 	import { isArray } from 'js-lin';
 	let arr=['1','2','3'];
 	isArray(arr);// true
 	</pre>
-	</td> 
-	<td>判断是否为数组</td>
-</tr>
-<tr>
+	</span> 
+	<span>判断是否为数组</span>
+</div>
+<!-- <tr>
     <td>2</td>
 	<td>
 	<pre>
@@ -75,7 +72,6 @@ $ npm install js-lin
 	</pre>
 	</td> 
 	<td>判断是否是空对象</td>
-</tr>
-</tbody>
-</table>
+</tr> -->
+</div>
 
