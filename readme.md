@@ -34,7 +34,7 @@ $ npm install js-lin
 	
 	//在vue中Index.vue和Main.vue通信
 	Index.vue:
-export default {
+	export default {
 	created() {
 		//订阅事件a
     	publish.on('a', this.event);
@@ -47,9 +47,9 @@ export default {
 	beforeDestroy() {
 		publish.remove('a', this.event);
  	},
-};
+	};
 	Main.vue:
-export default {
+	export default {
 	created() {
 		this.emitEvent();
  	},
@@ -58,8 +58,8 @@ export default {
 			publish.emit('a', '参数');
 		}
   	}
-};
-    </pre>
+	};
+</pre>
     </td>
     <td>订阅发布js，组件通信</td>
 
