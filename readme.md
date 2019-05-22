@@ -62,6 +62,17 @@ $ npm install js-lin
     <td>1</td>
 	<td>
 	<pre>
+	import { queryString } from 'js-lin';
+	假设地址为：http://localhost:1234/?name=1
+	let name = queryString("name"); //1
+	</pre>
+	</td> 
+	<td>获取地址栏参数</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
 	import { trimStr } from 'js-lin';
 	let str=' 1 25 ';
 	trimStr(str) //1 25

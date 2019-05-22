@@ -128,6 +128,7 @@ exports.isEmptyObj = isEmptyObj;
 exports.isFun = isFun;
 exports.isNum = isNum;
 exports.isObj = isObj;
+exports.queryString = queryString;
 exports.trimStr = trimStr;
 exports.publish = void 0;
 
@@ -248,6 +249,18 @@ function trimStr(str, tool) {
   }
 
   return str;
+} //获取地址栏参数
+
+
+function queryString(name) {
+  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+  var r = window.location.search.substr(1).match(reg);
+
+  if (r != null) {
+    return unescape(r[2]);
+  }
+
+  return null;
 }
 
 function isArray(arr) {

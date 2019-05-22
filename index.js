@@ -19,4 +19,3 @@ console.log(trimStr(str,true)) //125
 
 
 
-

@@ -108,6 +108,18 @@ function trimStr(str, tool) {
   return str;
 }
 
+//获取地址栏参数
+function queryString(name) {
+  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+  var r = window.location.search.substr(1).match(reg);
+
+  if (r != null) {
+    return unescape(r[2]);
+  }
+
+  return null;
+}
+
 function isArray(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 }
@@ -137,4 +149,4 @@ function isEmptyObj(o) {
   return false;
 }
 
-export { isArray, isEmptyObj, isFun, isNum, isObj, publish, trimStr };
+export { isArray, isEmptyObj, isFun, isNum, isObj, publish, queryString, trimStr };
