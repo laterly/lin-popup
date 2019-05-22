@@ -21,17 +21,12 @@ $ npm install js-lin
 	<td>
 	<pre>
 	import { publish } from 'js-lin';
-	
-	function event(data) {
-            console.log(data);
-        }
     //订阅事件a
     publish.on('a', (data) => {
-        event(data)
+        console.log(data);
     });
     //触发事件a
     publish.emit('a', '我是第1次调用的参数');
-	
 	//在vue中Index.vue和Main.vue通信
 	Index.vue:
 	export default {
@@ -61,7 +56,7 @@ $ npm install js-lin
 	};
 </pre>
     </td>
-    <td>订阅发布js，组件通信</td>
+    <td>订阅发布js，vue或者小程序等组件通信</td>
 
 </tr>	
 <tr>
