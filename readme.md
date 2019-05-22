@@ -2,7 +2,7 @@
 
 ```bash
 # npm下载js-lin库
-$ npm install js-lin
+$ npm install js-lin -D
 ```
 
 # js-lin
@@ -63,11 +63,11 @@ $ npm install js-lin
 	<td>
 	<pre>
 	import { queryString } from 'js-lin';
-	假设地址为：http://localhost:1234/?name=1
-	let name = queryString("name"); //1
+	// http://localhost:1234/?name=123&age=234
+	let name = queryString("name"); //123
 	</pre>
 	</td> 
-	<td>获取地址栏参数</td>
+	<td>根据key获取地址栏参数</td>
 </tr>
 <tr>
     <td>1</td>
@@ -80,6 +80,17 @@ $ npm install js-lin
 	</pre>
 	</td> 
 	<td>去除字符串两边的空格，如果有第二个参数true，则去除所有空格</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { randomInteger  } from 'js-lin';
+	randomInteger(1,100)  // 24 随机数
+    randomInteger(1,100,true)  // 可能会有100
+	</pre>
+	</td> 
+	<td>返回一个随机整数</td>
 </tr>	
 <tr>
     <td>1</td>

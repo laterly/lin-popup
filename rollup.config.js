@@ -5,12 +5,23 @@ const commonjs= require("rollup-plugin-commonjs");    //将CommonJS模块转换�
 const uglify= require('rollup-plugin-uglify');        //js压缩;
 const serve= require('rollup-plugin-serve');          //serve服务;
 const livereload= require('rollup-plugin-livereload');//热更新;
+const replace = require('rollup-plugin-replace')
+const isDev = process.env.NODE_ENV !== 'production';
+let sd = require('silly-datetime');
+let time=sd.format(new Date(), 'YYYY-MM-DD HH:mm');
+console.log(isDev);
+let banner = 
+  '/*!\n' +
+  ' * js-lin v' + 1.0 + '\n' +
+  ' * (c) '+ time + ' laterly\n' +
+  ' */'
 export default {
   input: path.resolve(__dirname, "./src/main.js"),
   output: [
     {
       file: path.resolve(__dirname, "./dist/bundle.js"),
-      format: "es"
+      format: "es",
+      banner: banner,
     }
   ],
   sourceMap: 'inline',       // 调试sourceMap;
@@ -25,7 +36,8 @@ export default {
           presets: ['@babel/preset-env'], //转ES5的插件;
           plugins: ['transform-class-properties']//转换静态类属性以及属性声明的属性初始化语法
     }),
-    // uglify(),                        //js压缩;
+    replace({ ENV: JSON.stringify(process.env.NODE_ENV || 'development')}),
+    (!isDev && uglify()),                        //js压缩;
     serve({
      contentBase: './dist/',   //启动文件夹;
       host: 'localhost',      //设置服务器;

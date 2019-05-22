@@ -6,4 +6,6 @@ import isObject from "./isObject.js"; //判断是否是对象
 import isFun from "./isFun.js"; //判断是否是方法
 import isNumber from "./isNumber.js"; //判断是否是数字
 import isEmptyObj from "./isEmptyObj.js"; //判断是否是空对象
-export {publish, isArray, isObject, isFun, isNumber, isEmptyObj,trimStr,queryString };
+import jsonp from './jsonp.js';
+import randomInteger from './randomInteger.js'
+export {publish, isArray, isObject, isFun, isNumber, isEmptyObj,trimStr,queryString,randomInteger,jsonp };

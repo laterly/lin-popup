@@ -1,5 +1,5 @@
 console.log('111');
-import { isArray, isObject, isFun, isNumber, isEmptyObj,trimStr } from "./dist/bundle";
+import { isArray, isObject, isFun, isNumber, isEmptyObj,trimStr,jsonp } from "./dist/bundle";
 
 let arr = [1, 2, 3]
 let obj = { a: 1 }
@@ -16,6 +16,7 @@ console.log(isEmptyObj(o));
 let str=' 1 25 ';
 console.log(trimStr(str)) //1 25
 console.log(trimStr(str,true)) //125
+
 
 
 

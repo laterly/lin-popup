@@ -128,12 +128,18 @@ exports.isEmptyObj = isEmptyObj;
 exports.isFun = isFun;
 exports.isNumber = isNumber;
 exports.isObject = isObject;
+exports.jsonp = jsop;
 exports.queryString = queryString;
+exports.randomInteger = randomInteger;
 exports.trimStr = trimStr;
 exports.publish = void 0;
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
+/*!
+ * js-lin v1
+ * (c) 2019-05-22 17:53 laterly
+ */
 (function (l, i, v, e) {
   v = l.createElement(i);
   v.async = 1;
@@ -291,6 +297,16 @@ function isEmptyObj(o) {
 
   return false;
 }
+
+function jsop() {} //产生一个随机整数
+
+
+function randomInteger(min, max, max_in) {
+  var maxIn = max_in ? 1 : 0;
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + maxIn)) + min;
+}
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -347,7 +363,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63770" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53556" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

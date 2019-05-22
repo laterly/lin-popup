@@ -1,4 +1,7 @@
-
+/*!
+ * js-lin v1
+ * (c) 2019-05-22 17:53 laterly
+ */
 (function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 function _typeof(obj) {
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -149,4 +152,14 @@ function isEmptyObj(o) {
   return false;
 }
 
-export { isArray, isEmptyObj, isFun, isNumber, isObject, publish, queryString, trimStr };
+function jsop() {}
+
+//产生一个随机整数
+function randomInteger(min, max, max_in) {
+  var maxIn = max_in ? 1 : 0;
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + maxIn)) + min;
+}
+
+export { isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, publish, queryString, randomInteger, trimStr };
