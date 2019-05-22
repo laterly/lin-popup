@@ -44,9 +44,11 @@ $ npm install js-lin
  	},
 	};
 	Main.vue:
+	<code>
 	<template>
   		<div class="index" @click="emitEvent">main</div>
 	</template>
+	</code>
 	export default {
 	methods: {
 		emitEvent(){
