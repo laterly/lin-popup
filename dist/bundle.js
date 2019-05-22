@@ -96,6 +96,18 @@ function () {
 
 var publish = new Public();
 
+function trimStr(str, tool) {
+  //去除所有空格
+  if (tool && tool == true) {
+    str = str.replace(/\s+/g, "");
+  } else {
+    //去除前后空格
+    str = str.replace(/^\s+|\s+$/g, "");
+  }
+
+  return str;
+}
+
 function isArray(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 }
@@ -125,4 +137,4 @@ function isEmptyObj(o) {
   return false;
 }
 
-export { isArray, isEmptyObj, isFun, isNum, isObj, publish };
+export { isArray, isEmptyObj, isFun, isNum, isObj, publish, trimStr };

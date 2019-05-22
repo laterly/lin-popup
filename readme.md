@@ -57,7 +57,18 @@ $ npm install js-lin
 </pre>
     </td>
     <td>订阅发布js，vue或者小程序等组件通信</td>
-
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { trimStr } from 'js-lin';
+	let str=' 1 25 ';
+	trimStr(str) //1 25
+	trimStr(str,true) //125
+	</pre>
+	</td> 
+	<td>去除字符串两边的空格，如果有第二个参数true，则去除所有空格</td>
 </tr>	
 <tr>
     <td>1</td>
