@@ -1,5 +1,5 @@
 console.log('111');
-import { isArray, isObject, isFun, isNumber, isEmptyObj,trimStr,jsonp } from "./dist/bundle";
+import { isArray, isObject, isFun, isNumber, isEmptyObj,trimStr } from "./dist/bundle";
 
 let arr = [1, 2, 3]
 let obj = { a: 1 }
