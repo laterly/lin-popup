@@ -123,14 +123,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.add = add;
+exports.compare = compare;
+exports.divide = divide;
 exports.isArray = isArray;
 exports.isEmptyObj = isEmptyObj;
 exports.isFun = isFun;
 exports.isNumber = isNumber;
 exports.isObject = isObject;
 exports.jsonp = jsop;
+exports.multiply = multiply;
 exports.queryString = queryString;
 exports.randomInteger = randomInteger;
+exports.subtract = subtract;
 exports.trimStr = trimStr;
 exports.publish = void 0;
 
@@ -138,7 +143,7 @@ function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.itera
 
 /*!
  * js-lin v1
- * (c) 2019-05-22 18:26 laterly
+ * (c) 2019-05-23 10:45 laterly
  */
 (function (l, i, v, e) {
   v = l.createElement(i);
@@ -306,7 +311,93 @@ function randomInteger(min, max, max_in) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + maxIn)) + min;
-}
+} //加法add(x,y) 将x,y两个字符串相加，返回值为x+y的结果。第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
+
+
+function add(num1, num2, bool) {
+  var r1, r2, m, t;
+
+  try {
+    r1 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r1 = 0;
+  }
+
+  try {
+    r2 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r2 = 0;
+  }
+
+  m = Math.pow(10, Math.max(r1, r2));
+  if (bool) t = ((num1 * m + num2 * m) / m).toFixed(2);else t = (num1 * m + num2 * m) / m;
+  return t;
+} //减法subtract(x,y) 将x,y两个字符串相减，返回值为x-y的结果。第三个参数true,subtract(x,y,true)则返回的结果按照四舍五入保保留两位小数
+
+
+function subtract(num1, num2, bool) {
+  var r1, r2, m, t;
+
+  try {
+    r1 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r1 = 0;
+  }
+
+  try {
+    r2 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r2 = 0;
+  }
+
+  m = Math.pow(10, Math.max(r1, r2));
+  if (bool) t = ((num1 * m - num2 * m) / m).toFixed(2);else t = (num1 * m - num2 * m) / m;
+  return t;
+} //乘法multiply(x,y) 将x,y两个字符串相乘，返回值为x*y的结果。第三个参数true,multiply(x,y,true)则返回的结果按照四舍五入保留两位小数
+
+
+function multiply(num1, num2, bool) {
+  var m = 0;
+  var s1, s2, t;
+  s1 = num1.toString();
+  s2 = num2.toString();
+
+  try {
+    m += s1.split(".")[1].length;
+  } catch (e) {}
+
+  try {
+    m += s2.split(".")[1].length;
+  } catch (e) {}
+
+  t = Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
+  if (bool) t = t.toFixed(2);
+  return t;
+} //除法divide(x,y) 将x,y两个字符串相除，返回值为x/y的结果。如果想保留两位小数,给个参数true divide(x,y,true)则返回的结果按照四舍五入保留两位小数
+
+
+function divide(num1, num2, bool) {
+  var m = 0;
+  var s1, s2, t;
+  s1 = num1.toString();
+  s2 = num2.toString();
+
+  try {
+    m += s1.split(".")[1].length;
+  } catch (e) {}
+
+  try {
+    m += s2.split(".")[1].length;
+  } catch (e) {}
+
+  t = Number(s1.replace(".", "")) / Number(s2.replace(".", "")) / Math.pow(10, m);
+  if (bool) t = t.toFixed(2);
+  return t;
+} //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
+
+
+function compare() {} //取出数字最大值
+//取出数字最小值
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -335,6 +426,11 @@ var str = ' 1 25 ';
 console.log((0, _bundle.trimStr)(str)); //1 25
 
 console.log((0, _bundle.trimStr)(str, true)); //125
+
+console.log((0, _bundle.add)(1.5, 2));
+console.log((0, _bundle.subtract)(8, 2));
+console.log((0, _bundle.multiply)(2.4, 2.23, true));
+console.log((0, _bundle.divide)(6, 5, true));
 },{"./dist/bundle":"dist/bundle.js"}],"node_modules/_parcel-bundler@1.12.3@parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -363,7 +459,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59885" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52166" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,6 +1,6 @@
 /*!
  * js-lin v1
- * (c) 2019-05-22 18:26 laterly
+ * (c) 2019-05-23 10:45 laterly
  */
 (function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 function _typeof(obj) {
@@ -162,4 +162,87 @@ function randomInteger(min, max, max_in) {
   return Math.floor(Math.random() * (max - min + maxIn)) + min;
 }
 
-export { isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, publish, queryString, randomInteger, trimStr };
+//加法add(x,y) 将x,y两个字符串相加，返回值为x+y的结果。第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
+function add(num1, num2, bool) {
+  var r1, r2, m, t;
+
+  try {
+    r1 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r1 = 0;
+  }
+
+  try {
+    r2 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r2 = 0;
+  }
+
+  m = Math.pow(10, Math.max(r1, r2));
+  if (bool) t = ((num1 * m + num2 * m) / m).toFixed(2);else t = (num1 * m + num2 * m) / m;
+  return t;
+} //减法subtract(x,y) 将x,y两个字符串相减，返回值为x-y的结果。第三个参数true,subtract(x,y,true)则返回的结果按照四舍五入保保留两位小数
+
+function subtract(num1, num2, bool) {
+  var r1, r2, m, t;
+
+  try {
+    r1 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r1 = 0;
+  }
+
+  try {
+    r2 = num1.toString().split(".")[1].length;
+  } catch (e) {
+    r2 = 0;
+  }
+
+  m = Math.pow(10, Math.max(r1, r2));
+
+  if (bool) t = ((num1 * m - num2 * m) / m).toFixed(2);else t = (num1 * m - num2 * m) / m;
+  return t;
+} //乘法multiply(x,y) 将x,y两个字符串相乘，返回值为x*y的结果。第三个参数true,multiply(x,y,true)则返回的结果按照四舍五入保留两位小数
+
+function multiply(num1, num2, bool) {
+  var m = 0;
+  var s1, s2, t;
+  s1 = num1.toString();
+  s2 = num2.toString();
+
+  try {
+    m += s1.split(".")[1].length;
+  } catch (e) {}
+
+  try {
+    m += s2.split(".")[1].length;
+  } catch (e) {}
+
+  t = Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
+  if (bool) t = t.toFixed(2);
+  return t;
+} //除法divide(x,y) 将x,y两个字符串相除，返回值为x/y的结果。如果想保留两位小数,给个参数true divide(x,y,true)则返回的结果按照四舍五入保留两位小数
+
+function divide(num1, num2, bool) {
+  var m = 0;
+  var s1, s2, t;
+  s1 = num1.toString();
+  s2 = num2.toString();
+
+  try {
+    m += s1.split(".")[1].length;
+  } catch (e) {}
+
+  try {
+    m += s2.split(".")[1].length;
+  } catch (e) {}
+
+  t = Number(s1.replace(".", "")) / Number(s2.replace(".", "")) / Math.pow(10, m);
+  if (bool) t = t.toFixed(2);
+  return t;
+} //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
+
+function compare() {} //取出数字最大值
+//取出数字最小值
+
+export { add, compare, divide, isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, multiply, publish, queryString, randomInteger, subtract, trimStr };
