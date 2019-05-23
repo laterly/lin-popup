@@ -1,6 +1,6 @@
 /*!
  * js-lin v1
- * (c) 2019-05-23 11:39 laterly
+ * (c) 2019-05-23 12:21 laterly
  */
 (function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 function _typeof(obj) {
@@ -242,25 +242,80 @@ function divide(num1, num2, bool) {
   if (bool) t = t.toFixed(2);
   return t;
 } //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
-
-function compareNum() {} //取出数字最大值
+//取出数字最大值
 //maxNum(x,y,z...) or maxNum([x,y,z]) 取出最大值
 
 function maxNum(arr) {
   var newArr = [];
-  if (isArray(arr)) newArr = arr;else {
-    newArr = arr.split(',');
+
+  if (arguments.length == 1) {
+    if (isArray(arr)) newArr = arr;else {
+      newArr = arr.split(",");
+    }
+  } else {
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = arguments[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var item = _step.value;
+        newArr.push(item);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
   }
+
   return Math.max.apply(Math, newArr);
 } //取出数字最小值
 //minNum(x,y,z...) or minNum([x,y,z]) 取出最小值
 
 function minNum(arr) {
   var newArr = [];
-  if (isArray(arr)) newArr = arr;else {
-    newArr = arr.split(',');
+
+  if (arguments.length == 1) {
+    if (isArray(arr)) newArr = arr;else {
+      newArr = arr.split(",");
+    }
+  } else {
+    var _iteratorNormalCompletion2 = true;
+    var _didIteratorError2 = false;
+    var _iteratorError2 = undefined;
+
+    try {
+      for (var _iterator2 = arguments[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        var item = _step2.value;
+        newArr.push(item);
+      }
+    } catch (err) {
+      _didIteratorError2 = true;
+      _iteratorError2 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+          _iterator2["return"]();
+        }
+      } finally {
+        if (_didIteratorError2) {
+          throw _iteratorError2;
+        }
+      }
+    }
   }
+
   return Math.min.apply(Math, newArr);
 }
 
-export { add, compareNum, divide, isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, maxNum, minNum, multiply, publish, queryString, randomInteger, subtract, trimStr };
+export { add, divide, isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, maxNum, minNum, multiply, publish, queryString, randomInteger, subtract, trimStr };

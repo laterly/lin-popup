@@ -13,7 +13,6 @@ import {
   subtract,
   multiply,
   divide,
-  compareNum,
   maxNum,
   minNum
 } from "./number.js";
@@ -32,7 +31,6 @@ export {
   subtract,
   multiply,
   divide,
-  compareNum,
   maxNum,
   minNum
 };

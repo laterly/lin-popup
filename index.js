@@ -10,7 +10,6 @@ import {
   subtract,
   multiply,
   divide,
-  compareNum,
   maxNum,
   minNum
 } from "./dist/bundle";
@@ -36,5 +35,7 @@ console.log(multiply(2.4, 2.23, true));
 console.log(divide(6, 5, true));
 let arrs = [1, 2, 3];
 let strs = "1,2,3";
-console.log(maxNum(arrs));
-console.log(maxNum(strs));
+// console.log(maxNum(arrs));
+console.log(maxNum(1,2,3));
+console.log(minNum(arrs));
+console.log(minNum(strs));

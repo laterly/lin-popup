@@ -118,6 +118,47 @@ $ npm install js-lin -D
     <td>1</td>
 	<td>
 	<pre>
+	import { maxNum } from 'js-lin';
+	//maxNum(x,y,z...) or maxNum([x,y,z]) 取出最大值
+	let arr = [1, 2, 3];
+	let str = "1,2,3";
+	maxNum(arr) //3
+	maxNum(str) //3
+	maxNum(1,2,3,4) //4
+	</pre>
+	</td> 
+	<td>获取最大值</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { minNum } from 'js-lin';
+	//minNum(x,y,z...) or minNum([x,y,z]) 取出最大值
+	let arr = [1, 2, 3];
+	let str = "1,2,3";
+	minNum(arr) //1
+	minNum(str) //1
+	minNum(1,2,3,4) //1
+	</pre>
+	</td> 
+	<td>获取最小值</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { queryString } from 'js-lin';
+	// http://localhost:1234/?name=123&age=234
+	let name = queryString("name"); //123
+	</pre>
+	</td> 
+	<td>根据key获取地址栏参数</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
 	import { queryString } from 'js-lin';
 	// http://localhost:1234/?name=123&age=234
 	let name = queryString("name"); //123
