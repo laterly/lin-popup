@@ -64,19 +64,23 @@ $ npm install js-lin -D
 	<pre>
 	import { add,subtract,multiply,divide } from 'js-lin';
 	1.加法add(x,y) 
-	//将x,y两个字符串相加，返回值为x+y的结果，如果第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
-	add(1.5,2) //3.5
-	add(1.5,2,true) //3.50
+	//将x,y两个字符串相加，返回值为x+y的结果。
+	//如果第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
+	<code>add(1.5,2) //3.5</code>
+	<code>add(1.5,2,true) //3.50</code>
 	2.减法subtract(x,y)
-	//将x,y两个字符串相减，返回值为x-y的结果，如果第三个参数true,subtract(x,y,true)则返回的结果按照四舍五入保留两位小数
+	//将x,y两个字符串相减，返回值为x-y的结果。
+	//如果第三个参数true,subtract(x,y,true)则返回的结果按照四舍五入保留两位小数
 	subtract(8.2,2) //6.2
 	subtract(8.2,2,true) //6.20
 	3.乘法multiply(x,y)
-	//将x,y两个字符串相乘，返回值为x*y的结果,如果第三个参数true,multiply(x,y,true)则返回的结果按照四舍五入保留两位小数
+	//将x,y两个字符串相乘，返回值为x*y的结果。
+	//如果第三个参数true,multiply(x,y,true)则返回的结果按照四舍五入保留两位小数
 	multiply(2.4,2.22) //5.328
 	multiply(2.4,2.22,true) //5.33
 	4.除法divide(x,y)
-	//将x,y两个字符串相除，返回值为x/y的结果,如果第三个参数true,divide(x,y,true)则返回的结果按照四舍五入保留两位小数
+	//将x,y两个字符串相除，返回值为x/y的结果。
+	//如果第三个参数true,divide(x,y,true)则返回的结果按照四舍五入保留两位小数
 	divide(6,5) //1.2
 	divide(6,5,true) //1.20
 	</pre>
