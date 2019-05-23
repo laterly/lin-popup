@@ -1,6 +1,6 @@
 /*!
  * js-lin v1
- * (c) 2019-05-23 10:45 laterly
+ * (c) 2019-05-23 11:39 laterly
  */
 (function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 function _typeof(obj) {
@@ -162,6 +162,7 @@ function randomInteger(min, max, max_in) {
   return Math.floor(Math.random() * (max - min + maxIn)) + min;
 }
 
+//加减乘除，支持浮点数
 //加法add(x,y) 将x,y两个字符串相加，返回值为x+y的结果。第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
 function add(num1, num2, bool) {
   var r1, r2, m, t;
@@ -242,7 +243,24 @@ function divide(num1, num2, bool) {
   return t;
 } //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
 
-function compare() {} //取出数字最大值
-//取出数字最小值
+function compareNum() {} //取出数字最大值
+//maxNum(x,y,z...) or maxNum([x,y,z]) 取出最大值
 
-export { add, compare, divide, isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, multiply, publish, queryString, randomInteger, subtract, trimStr };
+function maxNum(arr) {
+  var newArr = [];
+  if (isArray(arr)) newArr = arr;else {
+    newArr = arr.split(',');
+  }
+  return Math.max.apply(Math, newArr);
+} //取出数字最小值
+//minNum(x,y,z...) or minNum([x,y,z]) 取出最小值
+
+function minNum(arr) {
+  var newArr = [];
+  if (isArray(arr)) newArr = arr;else {
+    newArr = arr.split(',');
+  }
+  return Math.min.apply(Math, newArr);
+}
+
+export { add, compareNum, divide, isArray, isEmptyObj, isFun, isNumber, isObject, jsop as jsonp, maxNum, minNum, multiply, publish, queryString, randomInteger, subtract, trimStr };

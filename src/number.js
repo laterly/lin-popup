@@ -77,16 +77,30 @@ export function divide(num1,num2,bool) {
     return t;
 }
 //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
+import isArray from "./isArray.js"; //判断是否是数组
 export function compareNum() {
 
 }
 //取出数字最大值
 //maxNum(x,y,z...) or maxNum([x,y,z]) 取出最大值
-export function maxNum() {
-
+export function maxNum(arr) {
+    let newArr=[];
+    if(isArray(arr))
+        newArr=arr;
+    else{
+        newArr=arr.split(',');
+    }
+       
+    return Math.max.apply(Math, newArr);
 }
 //取出数字最小值
 //minNum(x,y,z...) or minNum([x,y,z]) 取出最小值
-export function minNum() {
-
+export function minNum(arr) {
+    let newArr=[];
+    if(isArray(arr))
+        newArr=arr;
+    else{
+        newArr=arr.split(',');
+    }
+    return Math.min.apply(Math, newArr);
 }

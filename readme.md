@@ -62,33 +62,57 @@ $ npm install js-lin -D
     <td>1</td>
 	<td>
 	<pre>
-	import { add,subtract,multiply,divide } from 'js-lin';
-	1.加法add(x,y) 
+	import { add } from 'js-lin';
+	加法add(x,y) 
 	//将x,y两个字符串相加，返回值为x+y的结果。
 	//如果第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
 	add(1.5,2) //3.5
 	add(1.5,2,true) //3.50
-	<br>
-	2.减法subtract(x,y)
+	</pre>
+	</td> 
+	<td>加法运算，支持浮点数</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { subtract } from 'js-lin';
+	减法subtract(x,y)
 	//将x,y两个字符串相减，返回值为x-y的结果。
 	//如果第三个参数true,subtract(x,y,true)则返回的结果按照四舍五入保留两位小数
 	subtract(8.2,2) //6.2
 	subtract(8.2,2,true) //6.20
-	<br>
-	3.乘法multiply(x,y)
+	</pre>
+	</td> 
+	<td>减法运算，支持浮点数</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { multiply } from 'js-lin';
+	乘法multiply(x,y)
 	//将x,y两个字符串相乘，返回值为x*y的结果。
 	//如果第三个参数true,multiply(x,y,true)则返回的结果按照四舍五入保留两位小数
 	multiply(2.4,2.22) //5.328
 	multiply(2.4,2.22,true) //5.33
-	<br>
-	4.除法divide(x,y)
+	</pre>
+	</td> 
+	<td>乘法运算，支持浮点数</td>
+</tr>
+<tr>
+    <td>1</td>
+	<td>
+	<pre>
+	import { divide } from 'js-lin';
+	除法divide(x,y)
 	//将x,y两个字符串相除，返回值为x/y的结果。
 	//如果第三个参数true,divide(x,y,true)则返回的结果按照四舍五入保留两位小数
 	divide(6,5) //1.2
 	divide(6,5,true) //1.20
 	</pre>
 	</td> 
-	<td>加减乘除运算，支持浮点数</td>
+	<td>除法运算，支持浮点数</td>
 </tr>
 <tr>
     <td>1</td>

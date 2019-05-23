@@ -124,7 +124,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.add = add;
-exports.compare = compare;
+exports.compareNum = compareNum;
 exports.divide = divide;
 exports.isArray = isArray;
 exports.isEmptyObj = isEmptyObj;
@@ -132,6 +132,8 @@ exports.isFun = isFun;
 exports.isNumber = isNumber;
 exports.isObject = isObject;
 exports.jsonp = jsop;
+exports.maxNum = maxNum;
+exports.minNum = minNum;
 exports.multiply = multiply;
 exports.queryString = queryString;
 exports.randomInteger = randomInteger;
@@ -143,7 +145,7 @@ function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.itera
 
 /*!
  * js-lin v1
- * (c) 2019-05-23 10:45 laterly
+ * (c) 2019-05-23 11:39 laterly
  */
 (function (l, i, v, e) {
   v = l.createElement(i);
@@ -311,7 +313,8 @@ function randomInteger(min, max, max_in) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + maxIn)) + min;
-} //加法add(x,y) 将x,y两个字符串相加，返回值为x+y的结果。第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
+} //加减乘除，支持浮点数
+//加法add(x,y) 将x,y两个字符串相加，返回值为x+y的结果。第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
 
 
 function add(num1, num2, bool) {
@@ -396,14 +399,33 @@ function divide(num1, num2, bool) {
 } //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
 
 
-function compare() {} //取出数字最大值
-//取出数字最小值
+function compareNum() {} //取出数字最大值
+//maxNum(x,y,z...) or maxNum([x,y,z]) 取出最大值
+
+
+function maxNum(arr) {
+  var newArr = [];
+  if (isArray(arr)) newArr = arr;else {
+    newArr = arr.split(',');
+  }
+  return Math.max.apply(Math, newArr);
+} //取出数字最小值
+//minNum(x,y,z...) or minNum([x,y,z]) 取出最小值
+
+
+function minNum(arr) {
+  var newArr = [];
+  if (isArray(arr)) newArr = arr;else {
+    newArr = arr.split(',');
+  }
+  return Math.min.apply(Math, newArr);
+}
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _bundle = require("./dist/bundle");
 
-console.log('111');
+console.log("111");
 var arr = [1, 2, 3];
 var obj = {
   a: 1
@@ -422,7 +444,7 @@ console.log((0, _bundle.isObject)(obj)); // true
 console.log((0, _bundle.isFun)(a));
 console.log((0, _bundle.isNumber)(b));
 console.log((0, _bundle.isEmptyObj)(o));
-var str = ' 1 25 ';
+var str = " 1 25 ";
 console.log((0, _bundle.trimStr)(str)); //1 25
 
 console.log((0, _bundle.trimStr)(str, true)); //125
@@ -431,6 +453,10 @@ console.log((0, _bundle.add)(1.5, 2));
 console.log((0, _bundle.subtract)(8, 2));
 console.log((0, _bundle.multiply)(2.4, 2.23, true));
 console.log((0, _bundle.divide)(6, 5, true));
+var arrs = [1, 2, 3];
+var strs = "1,2,3";
+console.log((0, _bundle.maxNum)(arrs));
+console.log((0, _bundle.maxNum)(strs));
 },{"./dist/bundle":"dist/bundle.js"}],"node_modules/_parcel-bundler@1.12.3@parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -459,7 +485,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52166" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55942" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
