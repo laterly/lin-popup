@@ -21,12 +21,12 @@ $ npm install js-lin -D
 	<td>
 	<pre>
 	import { publish } from 'js-lin';
-    //订阅事件a
-    publish.on('a', (data) => {
-        console.log(data);
-    });
-    //触发事件a
-    publish.emit('a', '我是第1次调用的参数');
+    	//订阅事件a
+    	publish.on('a', (data) => {
+        	console.log(data);
+    	});
+    	//触发事件a
+    	publish.emit('a', '我是第1次调用的参数');
 	//在vue中Index.vue和Main.vue通信
 	Index.vue:
 	export default {
