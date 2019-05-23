@@ -66,8 +66,8 @@ $ npm install js-lin -D
 	1.加法add(x,y) 
 	//将x,y两个字符串相加，返回值为x+y的结果。
 	//如果第三个参数true,add(x,y,true)则返回的结果按照四舍五入保留两位小数
-	<code>add(1.5,2) //3.5</code>
-	<code>add(1.5,2,true) //3.50</code>
+	add(1.5,2) //3.5
+	add(1.5,2,true) //3.50
 	2.减法subtract(x,y)
 	//将x,y两个字符串相减，返回值为x-y的结果。
 	//如果第三个参数true,subtract(x,y,true)则返回的结果按照四舍五入保留两位小数
