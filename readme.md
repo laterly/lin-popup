@@ -59,7 +59,7 @@ $ npm install js-lin -D
     <td>订阅发布js，vue或者小程序等组件通信</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>2</td>
 	<td>
 	<pre>
 	import { add } from 'js-lin';
@@ -73,7 +73,7 @@ $ npm install js-lin -D
 	<td>加法运算，支持浮点数</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>3</td>
 	<td>
 	<pre>
 	import { subtract } from 'js-lin';
@@ -87,7 +87,7 @@ $ npm install js-lin -D
 	<td>减法运算，支持浮点数</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>4</td>
 	<td>
 	<pre>
 	import { multiply } from 'js-lin';
@@ -101,7 +101,7 @@ $ npm install js-lin -D
 	<td>乘法运算，支持浮点数</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>5</td>
 	<td>
 	<pre>
 	import { divide } from 'js-lin';
@@ -115,7 +115,7 @@ $ npm install js-lin -D
 	<td>除法运算，支持浮点数</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>6</td>
 	<td>
 	<pre>
 	import { maxNum } from 'js-lin';
@@ -130,7 +130,7 @@ $ npm install js-lin -D
 	<td>获取最大值</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>7</td>
 	<td>
 	<pre>
 	import { minNum } from 'js-lin';
@@ -145,7 +145,7 @@ $ npm install js-lin -D
 	<td>获取最小值</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>8</td>
 	<td>
 	<pre>
 	import { queryString } from 'js-lin';
@@ -156,7 +156,7 @@ $ npm install js-lin -D
 	<td>根据key获取地址栏参数</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>9</td>
 	<td>
 	<pre>
 	import { queryString } from 'js-lin';
@@ -167,7 +167,7 @@ $ npm install js-lin -D
 	<td>根据key获取地址栏参数</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>10</td>
 	<td>
 	<pre>
 	import { trimStr } from 'js-lin';
@@ -179,7 +179,7 @@ $ npm install js-lin -D
 	<td>去除字符串两边的空格，如果有第二个参数true，则去除所有空格</td>
 </tr>
 <tr>
-    <td>1</td>
+    <td>11</td>
 	<td>
 	<pre>
 	import { randomInteger  } from 'js-lin';
@@ -190,7 +190,7 @@ $ npm install js-lin -D
 	<td>返回一个随机整数</td>
 </tr>	
 <tr>
-    <td>1</td>
+    <td>12</td>
 	<td>
 	<pre>
 	import { isArray } from 'js-lin';
@@ -201,7 +201,7 @@ $ npm install js-lin -D
 	<td>判断是否为数组</td>
 </tr>
 <tr>
-    <td>2</td>
+    <td>13</td>
 	<td>
 	<pre>
 	import { isObject } from 'js-lin';
@@ -212,7 +212,7 @@ $ npm install js-lin -D
 	<td>判断是否是对象</td>
 </tr>
 <tr>
-    <td>3</td>
+    <td>14</td>
 	<td>
 	<pre>
 	import { isFun } from 'js-lin';
@@ -225,7 +225,7 @@ $ npm install js-lin -D
 	<td>判断是否是方法</td>
 </tr>
 <tr>
-    <td>4</td>
+    <td>15</td>
 	<td>
 	<pre>
 	import { isNumber } from 'js-lin';
@@ -236,7 +236,7 @@ $ npm install js-lin -D
 	<td>判断是否是方法</td>
 </tr>
 <tr>
-    <td>4</td>
+    <td>16</td>
 	<td>
 	<pre>
 	import { isString } from 'js-lin';
@@ -247,7 +247,7 @@ $ npm install js-lin -D
 	<td>判断是否是字符串</td>
 </tr>
 <tr>
-    <td>5</td>
+    <td>17</td>
 	<td>
 	<pre>
 	import { isEmptyObj } from 'js-lin';
