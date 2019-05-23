@@ -1,4 +1,4 @@
-> 认真写自己的工具库，包含一些常用方法 [(github地址)](https://github.com/laterly/js-lin.git)
+> 很有用的常用工具方法，包含一些常用方法 [(github地址)](https://github.com/laterly/js-lin.git)
 
 ```bash
 # npm下载js-lin库
