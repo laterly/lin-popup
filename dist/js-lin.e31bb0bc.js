@@ -118,77 +118,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"dist/bundle.js":[function(require,module,exports) {
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
-exports.add = add;
-exports.divide = divide;
-exports.isArray = isArray;
-exports.isEmptyObj = isEmptyObj;
-exports.isFun = isFun;
-exports.isNumber = isNumber;
-exports.isObject = isObject;
-exports.jsonp = jsop;
-exports.maxNum = maxNum;
-exports.minNum = minNum;
-exports.multiply = multiply;
-exports.queryString = queryString;
-exports.randomInteger = randomInteger;
-exports.subtract = subtract;
-exports.trimStr = trimStr;
-exports.publish = void 0;
-
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-
-/*!
- * js-lin v1
- * (c) 2019-05-23 12:21 laterly
- */
-(function (l, i, v, e) {
-  v = l.createElement(i);
-  v.async = 1;
-  v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1';
-  e = l.getElementsByTagName(i)[0];
-  e.parentNode.insertBefore(v, e);
-})(document, 'script');
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
 
 var Public =
 /*#__PURE__*/
@@ -249,7 +191,6 @@ function () {
 }();
 
 var publish = new Public();
-exports.publish = publish;
 
 function trimStr(str, tool) {
   //去除所有空格
@@ -395,8 +336,7 @@ function divide(num1, num2, bool) {
   t = Number(s1.replace(".", "")) / Number(s2.replace(".", "")) / Math.pow(10, m);
   if (bool) t = t.toFixed(2);
   return t;
-} //compare(x,y) 比较x,y大小,x>y返回1，等于返回0，小于返回-1
-//取出数字最大值
+} //取出数字最大值
 //maxNum(x,y,z...) or maxNum([x,y,z]) 取出最大值
 
 
@@ -422,8 +362,8 @@ function maxNum(arr) {
       _iteratorError = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
         }
       } finally {
         if (_didIteratorError) {
@@ -460,8 +400,8 @@ function minNum(arr) {
       _iteratorError2 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-          _iterator2["return"]();
+        if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+          _iterator2.return();
         }
       } finally {
         if (_didIteratorError2) {
@@ -473,6 +413,23 @@ function minNum(arr) {
 
   return Math.min.apply(Math, newArr);
 }
+
+exports.add = add;
+exports.divide = divide;
+exports.isArray = isArray;
+exports.isEmptyObj = isEmptyObj;
+exports.isFun = isFun;
+exports.isNumber = isNumber;
+exports.isObject = isObject;
+exports.jsonp = jsop;
+exports.maxNum = maxNum;
+exports.minNum = minNum;
+exports.multiply = multiply;
+exports.publish = publish;
+exports.queryString = queryString;
+exports.randomInteger = randomInteger;
+exports.subtract = subtract;
+exports.trimStr = trimStr;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 

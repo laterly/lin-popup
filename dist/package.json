@@ -1,6 +1,6 @@
 {
   "name": "js-lin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "很好用的工具函数",
   "main": "bundle.js",
   "scripts": {
