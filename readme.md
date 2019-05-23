@@ -54,7 +54,7 @@ $ npm install js-lin -D
 		}
   	}
 	};
-</pre>
+	</pre>
     </td>
     <td>订阅发布js，vue或者小程序等组件通信</td>
 </tr>
