@@ -1,4 +1,4 @@
-> 认真写自己的工具库，包含一些常用方法 [(github地址)](https://github.com/laterly/js-lin.git)
+> 很有用的常用工具方法，包含一些常用方法 [(github地址)](https://github.com/laterly/js-lin.git)
 
 ```bash
 # npm下载js-lin库
@@ -21,12 +21,12 @@ $ npm install js-lin -D
 	<td>
 	<pre>
 	import { publish } from 'js-lin';
-    //订阅事件a
-    publish.on('a', (data) => {
-        console.log(data);
-    });
-    //触发事件a
-    publish.emit('a', '我是第1次调用的参数');
+    	//订阅事件a
+    	publish.on('a', (data) => {
+        	console.log(data);
+    	});
+    	//触发事件a
+    	publish.emit('a', '我是第1次调用的参数');
 	//在vue中Index.vue和Main.vue通信
 	Index.vue:
 	export default {
