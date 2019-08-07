@@ -1,11 +1,14 @@
 console.log("111");
+// import {
+//   toast
+// } from "./dist/bundle";
 import {
   toast
-} from "./dist/bundle";
-// toast.msg('哈哈哈');
+} from "lin-popup";
+toast.msg('哈哈哈111');
 // toast.success('哈哈哈');
 // toast.warning('哈哈哈1');
-toast.error('哈哈哈1');
+// toast.error('哈哈哈1');
 // import {
 //   toats
 // } from "lin-popup";

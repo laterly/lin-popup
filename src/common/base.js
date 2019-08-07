@@ -31,6 +31,7 @@ function isEmptyObj(o){
 function isString(str) {
     return Object.prototype.toString.call(str)=="[object String]";
   }
+
 export{
     getRandom,
     isJSONStr,

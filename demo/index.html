@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,html{
+            margin: 0 10px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #fff;
+            text-align: center;
+            border: none;
+            border: 1px #ccc solid;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.toast提示</h3>
+    <button onclick="toastMain()">普通</button>
+    <button onclick="toastSuccess()">成功</button>
+    <button onclick="toastWarning()">警告</button>
+    <button onclick="toastError()">失败</button>
+    <script src='lin.popup.min.js'></script>
+    <script>
+        console.log('toast',toast);
+        function toastMain(){
+            toast.msg('普通toast');
+        }
+        function toastSuccess(){
+            toast.success('成功toast');
+        }
+        function toastWarning(){
+            toast.warning('警告toast');
+        }
+        function toastError(){
+            toast.error('失败toast');
+        }
+    </script>
+</body>
+</html>

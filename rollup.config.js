@@ -24,6 +24,7 @@ export default {
       banner: banner,
     }
   ],
+  moduleName: 'popup',
   sourceMap: 'inline',       // 调试sourceMap;
   plugins: [
     commonjs(),           //将CommonJS模块转换成ES6;

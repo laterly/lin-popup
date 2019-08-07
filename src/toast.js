@@ -3,9 +3,17 @@ import {
     isJSONStr,
     isEmptyObj,
     isString
-} from './common/base.js'
-
+} from './common/base.js';
+function createMask(){
+    console.log('zzz');
+    var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index:100; background:rgba(0,0,0,0);';
+    let div = document.createElement('div');
+    div.setAttribute('id', 'mask');
+    div.setAttribute('style', maskStyle);
+    document.querySelector('body').appendChild(div);
+}
 function creatToastClass(text) {
+    createMask();
     let id = getRandom(100);
     let spanStyle = `
     position: fixed;
@@ -18,6 +26,7 @@ function creatToastClass(text) {
     border-radius:20px;
     font-size:14px;
     color:#fff;
+    z-index:101;
     `
     let html = `<span>${text}</span>`;
     let div = document.createElement('div');
@@ -28,6 +37,7 @@ function creatToastClass(text) {
     return id;
 }
 function creatIconClass(text,img) {
+    createMask();
     let id = getRandom(100);
     let IconStyle = `
     position: fixed;
@@ -46,6 +56,7 @@ function creatIconClass(text,img) {
     flex-flow: column wrap;
     align-items: center; 
     justify-content: center;
+    z-index:101;
     `;
     let spanStyle = `
     font-size:14px;
@@ -90,8 +101,10 @@ function beforeToast(opt) {
 
 function setDuration(id,duration){
     let dom = document.getElementById(`${id}`);
+    let mask=document.getElementById('mask');
     setTimeout(() => {
         dom.parentNode.removeChild(dom);
+        mask.parentNode.removeChild(mask);
     }, duration)
 }
 function createToast(opt,num,img){

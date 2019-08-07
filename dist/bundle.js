@@ -1,6 +1,6 @@
 /*!
  * js-lin v1
- * (c) 2019-08-07 15:34 laterly
+ * (c) 2019-08-07 16:57 laterly
  */
 (function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 function _typeof(obj) {
@@ -56,9 +56,19 @@ function isString(str) {
   return Object.prototype.toString.call(str) == "[object String]";
 }
 
+function createMask() {
+  console.log('zzz');
+  var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index:100; background:rgba(0,0,0,0);';
+  var div = document.createElement('div');
+  div.setAttribute('id', 'mask');
+  div.setAttribute('style', maskStyle);
+  document.querySelector('body').appendChild(div);
+}
+
 function creatToastClass(text) {
+  createMask();
   var id = getRandom(100);
-  var spanStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:5px 20px; \n    background:rgba(0,0,0,0.5); \n    border-radius:20px;\n    font-size:14px;\n    color:#fff;\n    ";
+  var spanStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:5px 20px; \n    background:rgba(0,0,0,0.5); \n    border-radius:20px;\n    font-size:14px;\n    color:#fff;\n    z-index:101;\n    ";
   var html = "<span>".concat(text, "</span>");
   var div = document.createElement('div');
   div.innerHTML = html;
@@ -69,8 +79,9 @@ function creatToastClass(text) {
 }
 
 function creatIconClass(text, img) {
+  createMask();
   var id = getRandom(100);
-  var IconStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:20px 30px;\n    background:rgba(0,0,0,0.5);\n    border-radius:4px;\n    font-size:14px;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center; \n    justify-content: center;\n    ";
+  var IconStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:20px 30px;\n    background:rgba(0,0,0,0.5);\n    border-radius:4px;\n    font-size:14px;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center; \n    justify-content: center;\n    z-index:101;\n    ";
   var spanStyle = "\n    font-size:14px;\n    text-align: center;\n    margin-top:5px;\n    color:#fff;\n    ";
   var html = "\n    <img style=\"width:38px\" src=\"".concat(img, "\">\n    <span style=\"").concat(spanStyle, "\">").concat(text, "</span>");
   var div = document.createElement('div');
@@ -110,8 +121,10 @@ function beforeToast(opt) {
 
 function setDuration(id, duration) {
   var dom = document.getElementById("".concat(id));
+  var mask = document.getElementById('mask');
   setTimeout(function () {
     dom.parentNode.removeChild(dom);
+    mask.parentNode.removeChild(mask);
   }, duration);
 }
 
