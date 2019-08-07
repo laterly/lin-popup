@@ -1,10 +1,8 @@
 console.log("111");
-// import {
-//   toast
-// } from "./dist/bundle";
 import {
   toast
-} from "lin-popup";
+} from "./dist/bundle";
+
 toast.msg('哈哈哈111');
 // toast.success('哈哈哈');
 // toast.warning('哈哈哈1');

@@ -117,13 +117,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/lin-popup/bundle.js":[function(require,module,exports) {
+})({"dist/bundle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.toast = void 0;
+
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 /*!
  * js-lin v1
@@ -138,13 +140,13 @@ exports.toast = void 0;
 })(document, 'script');
 
 function _typeof(obj) {
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function (obj) {
-      return typeof obj;
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
     };
   } else {
-    _typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
     };
   }
 
@@ -300,13 +302,11 @@ exports.toast = toast;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
-var _linPopup = require("lin-popup");
+var _bundle = require("./dist/bundle");
 
-console.log("111"); // import {
-//   toast
-// } from "./dist/bundle";
+console.log("111");
 
-_linPopup.toast.msg('哈哈哈111'); // toast.success('哈哈哈');
+_bundle.toast.msg('哈哈哈111'); // toast.success('哈哈哈');
 // toast.warning('哈哈哈1');
 // toast.error('哈哈哈1');
 // import {
@@ -330,7 +330,7 @@ _linPopup.toast.msg('哈哈哈111'); // toast.success('哈哈哈');
 // } from "lin-popup";
 // dialog.alert()
 //dialog.confirm
-},{"lin-popup":"node_modules/lin-popup/bundle.js"}],"node_modules/_parcel-bundler@1.12.3@parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./dist/bundle":"dist/bundle.js"}],"node_modules/_parcel-bundler@1.12.3@parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
