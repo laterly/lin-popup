@@ -1,7 +1,7 @@
 {
-  "name": "js-lin",
+  "name": "lin-popup",
   "version": "1.0.0",
-  "description": "很有用的工具常用方法",
+  "description": "popup弹窗",
   "main": "index.js",
   "scripts": {
     "rollup-build": "rollup ./src/main.js -f cjs -o dist/bundle.js",
