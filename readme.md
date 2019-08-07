@@ -7,11 +7,6 @@ npm i lin-popup -D
 ```
 import { toast } from 'lin-popup';
 ```
-- options
-
-     | 参数    | 类型   |  默认值  | 说明|
-     | text    | String | 正在加载 | 展示文本|
-     | duration | Number  |  无  | 持续时间（ms）|
 - 示例
 ```
 toast.msg({
