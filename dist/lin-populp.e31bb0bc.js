@@ -129,7 +129,7 @@ function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.itera
 
 /*!
  * js-lin v1
- * (c) 2019-08-07 14:15 laterly
+ * (c) 2019-08-07 15:34 laterly
  */
 (function (l, i, v, e) {
   v = l.createElement(i);
@@ -345,7 +345,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57934" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54030" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
