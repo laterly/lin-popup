@@ -14,7 +14,7 @@ npm i lin-popup -D
 ```
 import { toast } from 'lin-popup';
 ```
-- 示例（可参考 [demo.html](https://github.com/laterly/lin-popup/blob/master/demo/index.html) ）
+- 示例（可参考 [demo.html](https://github.com/laterly/lin-popup/blob/master/demo/demo.html) ）
 ```
 toast.msg({
     text: '正在加载',
@@ -34,7 +34,7 @@ toast.error('失败');
 ```
 import { loading } from 'lin-popup';
 ```
-- 示例（可参考 [demo.html](https://github.com/laterly/lin-popup/blob/master/demo/index.html) ）
+- 示例（可参考 [demo.html](https://github.com/laterly/lin-popup/blob/master/demo/demo.html) ）
 ```
 let load=loading('正在加载');
 setTimeout(()=>{
@@ -46,7 +46,7 @@ setTimeout(()=>{
 ```
 import { dialog } from 'lin-popup';
 ```
-- 示例（可参考 [demo.html](https://github.com/laterly/lin-popup/blob/master/demo/index.html) ）
+- 示例（可参考 [demo.html](https://github.com/laterly/lin-popup/blob/master/demo/demo.html) ）
 ```
 1.
 dialog.confirm({
