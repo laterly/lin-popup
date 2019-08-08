@@ -3,7 +3,7 @@ import {
   toast,
   loading,
   dialog
-} from "./dist/bundle";
+} from "./dist/bundle.js";
 
 // toast.msg('哈哈哈111');
 // toast.success('哈哈哈');
