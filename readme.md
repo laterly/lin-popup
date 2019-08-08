@@ -1,11 +1,15 @@
 # lin-popup
 封装移动端弹窗组件，toast、dialog、loading，支持es6,支持srcipt标签引入
+
+#### 1.npm引入
 ```
-1.import引入
 npm i lin-popup -D
-2.script引入
+```
+#### 2.script引入
+```
 <script src="https://cdn.jsdelivr.net/npm/lin-popup@1.0.4/lin.popup.min.js"></script>
 ```
+
 ## 1. toast
 ```
 import { toast } from 'lin-popup';
