@@ -1,9 +1,10 @@
 console.log("111");
 import {
-  toast
+  toast,
+  loading
 } from "./dist/bundle";
 
-toast.msg('哈哈哈111');
+// toast.msg('哈哈哈111');
 // toast.success('哈哈哈');
 // toast.warning('哈哈哈1');
 // toast.error('哈哈哈1');
@@ -20,9 +21,12 @@ toast.msg('哈哈哈111');
 // import {
 //   loading
 // } from "lin-popup";
-// var load=loading({
+let load=loading('正在加载');
+console.log('load',load);
+setTimeout(function(){
+  load.hide();
+},3000)
 
-// });
 // load.hide();
 // import {
 //   dialog

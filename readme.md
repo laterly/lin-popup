@@ -23,3 +23,14 @@ toast.success('成功');
 toast.warning('警告');
 toast.error('失败');
 ```
+## 2.loading 
+```
+import { loading } from 'lin-popup';
+```
+- 示例
+```
+let load=loading('正在加载');
+setTimeout(()=>{
+  load.hide();
+},3000)
+```
