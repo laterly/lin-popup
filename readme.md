@@ -1,5 +1,5 @@
 # lin-popup
-封装移动端弹窗组件，toast、dialog、loading，支持es6,支持script标签引入
+封装移动端弹窗组件，toast、dialog、loading，支持es6
 ```
 npm i lin-popup -D
 ```
