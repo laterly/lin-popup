@@ -85,8 +85,10 @@ let loading = function(opt)  {
     let id=createToast(opt,img);
     console.log('id',id);
     let dom=document.getElementById(`${id}`);
+    let mask=document.getElementById('mask');
     function hide(){
         dom.parentNode.removeChild(dom);
+        mask.parentNode.removeChild(mask);
     }
     return {
         hide

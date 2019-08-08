@@ -1,6 +1,6 @@
 /*!
  * js-lin v1
- * (c) 2019-08-07 16:27 laterly
+ * (c) 2019-08-08 14:38 laterly
  */
 (function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
 function _typeof(obj) {
@@ -56,9 +56,19 @@ function isString(str) {
   return Object.prototype.toString.call(str) == "[object String]";
 }
 
+function createMask() {
+  console.log('zzz');
+  var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index:100; background:rgba(0,0,0,0);';
+  var div = document.createElement('div');
+  div.setAttribute('id', 'mask');
+  div.setAttribute('style', maskStyle);
+  document.querySelector('body').appendChild(div);
+}
+
 function creatToastClass(text) {
+  createMask();
   var id = getRandom(100);
-  var spanStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:5px 20px; \n    background:rgba(0,0,0,0.5); \n    border-radius:20px;\n    font-size:14px;\n    color:#fff;\n    ";
+  var spanStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:5px 20px; \n    background:rgba(0,0,0,0.5); \n    border-radius:20px;\n    font-size:14px;\n    color:#fff;\n    z-index:101;\n    ";
   var html = "<span>".concat(text, "</span>");
   var div = document.createElement('div');
   div.innerHTML = html;
@@ -69,8 +79,9 @@ function creatToastClass(text) {
 }
 
 function creatIconClass(text, img) {
+  createMask();
   var id = getRandom(100);
-  var IconStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:20px 30px;\n    background:rgba(0,0,0,0.5);\n    border-radius:4px;\n    font-size:14px;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center; \n    justify-content: center;\n    ";
+  var IconStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:20px 30px;\n    background:rgba(0,0,0,0.5);\n    border-radius:4px;\n    font-size:14px;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center; \n    justify-content: center;\n    z-index:101;\n    ";
   var spanStyle = "\n    font-size:14px;\n    text-align: center;\n    margin-top:5px;\n    color:#fff;\n    ";
   var html = "\n    <img style=\"width:38px\" src=\"".concat(img, "\">\n    <span style=\"").concat(spanStyle, "\">").concat(text, "</span>");
   var div = document.createElement('div');
@@ -110,8 +121,10 @@ function beforeToast(opt) {
 
 function setDuration(id, duration) {
   var dom = document.getElementById("".concat(id));
+  var mask = document.getElementById('mask');
   setTimeout(function () {
     dom.parentNode.removeChild(dom);
+    mask.parentNode.removeChild(mask);
   }, duration);
 }
 
@@ -149,3 +162,148 @@ var toast = {
   warning: warning,
   error: error
 };
+
+function createMask$1() {
+  console.log('zzz');
+  var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index:100; background:rgba(0,0,0,0);';
+  var div = document.createElement('div');
+  div.setAttribute('id', 'mask');
+  div.setAttribute('style', maskStyle);
+  document.querySelector('body').appendChild(div);
+}
+
+function creatIconClass$1(text, img) {
+  createMask$1();
+  var id = getRandom(100);
+  var IconStyle = "\n    position: fixed;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%,-50%);\n    display:inline-block;\n    padding:20px 30px;\n    background:rgba(0,0,0,0.5);\n    border-radius:4px;\n    font-size:14px;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center;\n    display:flex; \n    flex-flow: column wrap;\n    align-items: center; \n    justify-content: center;\n    z-index:101;\n    ";
+  var spanStyle = "\n    font-size:14px;\n    text-align: center;\n    margin-top:5px;\n    color:#fff;\n    ";
+  var html = "\n    <img style=\"width:38px\" src=\"".concat(img, "\">\n    <span style=\"").concat(spanStyle, "\">").concat(text, "</span>");
+  var div = document.createElement('div');
+  div.innerHTML = html;
+  div.setAttribute('id', id);
+  div.setAttribute('style', IconStyle);
+  document.querySelector('body').appendChild(div);
+  return id;
+}
+
+function beforeToast$1(opt) {
+  var obj = null;
+
+  if (isEmptyObj(opt)) {
+    obj = {
+      text: '操作成功'
+    };
+  } else {
+    if (isJSONStr(opt)) {
+      obj = opt;
+    } else if (isString(opt)) {
+      obj = {
+        text: opt
+      };
+    } else {
+      obj = {
+        text: '操作成功'
+      };
+    }
+  }
+
+  return obj;
+}
+
+function createToast$1(opt, img) {
+  var obj = beforeToast$1(opt);
+  var text = obj.text;
+  var dom = null;
+  dom = creatIconClass$1(text, img);
+  return dom;
+}
+
+var loading = function loading(opt) {
+  var img = 'data:image/gif;base64,R0lGODlhNgA2ALMMAJmZmf///93d3bu7u5qamtzc3Ly8vLq6ut7e3pubm5iYmJaWlgAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkMxQTEwQUJGRTI2MjExRTg5QzM2RkM4MkZEMzE1MEY5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkMxQTEwQUMwRTI2MjExRTg5QzM2RkM4MkZEMzE1MEY5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzFBMTBBQkRFMjYyMTFFODlDMzZGQzgyRkQzMTUwRjkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzFBMTBBQkVFMjYyMTFFODlDMzZGQzgyRkQzMTUwRjkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQFBQAMACwAAAAANgA2AAAE/5DJSautIdzNu7/ZJ45fFpJoypia6jKCwLEcALxXLG/0Zt84im5n6Vl+wOBkCDJdkMoKs+g8/qJSHfVEgWKzxIlxcv2Cw6squWwWailcifc1GHSm8Mr8mbTU/xxvHWxWhBR/gBtoNTVIfX6Idm0Mjo8bkXVflZYdmFGVdIhBjkqJozaTqaqrrK2uhZuTm16zoJq1uLZYuWW4sr6vwcLDxMOGLscppDjLKrrMzSKxu8+Ne7fXetF6I5xy22vJ395dqD7Za4PHj+jp0Objfe3U8PHa9W3r+uSn+JT7/JAlQzdPoL9/BwsqE9dOIQlxCMlBdCYR4sFVDoVl1Biw2EUVEQEAACH5BAUFAAwALAQAAAAlABUAAARpkMlJq2VC3M071l7YZZloWiR4VsPApVwQdK27wZs8b7WNkjkdrXbBVXQ7Tq8ItCBDy4px8hQRpU2K0BSdTBlV7tWrkoQlAMCwhTpu0em0ku15w+NqnilZwctXJ35/gCKChIF4hyZxihYRACH5BAUFAAwALA0AAAAlABoAAARykMlJ5xg1680v/yB1eWGpjZipAUA3coLwse2GwjFH19mtxTkd7fTKAGWzYa9YOYZ2SxLFWVKKmBOgCnqVSqgmriWV1aoYYkvTvAkEMlYcUuOuw03zTN1+Du3dfX5/b4Efg4Ugf4glfIuOj5CRkpMmBBsRACH5BAUFAAwALBkAAAAdAB0AAARkkAHAqr0456m7rxP3jVZIkaTpDQMqhSuLqhorp3Bmt3OO7S7aBRj0WWwukJFBTIqOyGTpF+0IBKhq5srNerhd6QV8FY/JWHMFrbaQ25gwfE6v2++MgH7PD5j7gHpJgYFShHsVEQAh+QQFBQAMACwhAAQAFQAlAAAEWJBJCcC8OLNqtd/cp3GdiJHmGabXylIui75wJQ6DWmZ4f349XyqIYxGLQ+JLSWMIm9CodJoSWK9YgSjLtWq6XQ/4Si2bz5KAGqpus9trGtwtn7/hTfsbEwEAIfkEBQUADAAsHAANABoAJQAABFuQyUkrBcDqzbDnYOdhoTaSZXWi6bS26gib7GzfeK7DQ+//Ax5wGAwRiamjb8dsOpmC6C5KnVKluWs1qy0FOFoBJ0AGX8fkr7lCoKTVujczPafv5HF7vnzn51sRACH5BAUFAAwALBkAGQAdAB0AAARikMlJKwM4a2B73SDmdWE4kqV4rmzrvnAsV0M9W3V+07m9Sz3djxEcvASjIkvATPYsgQqz6awErtHJFAnDZrXTLtYSfnnJ5dYZTWWtpenVG94+zenqsadu1w/vO1dDFIKDDBEAIfkEBQUADAAsDQAhACUAFQAABGiQyUmrrSDfzXn+XSh+oGhaZHmuTApswTl4aRXc4qDTKnPjFUFFt6PZfhSBUjghzla/WHI5JEKBU6XFaopalkyKU+T9UrdcTjl4rhZhyAt4M4ZL5W30E86Z0/csE36BJ4OEJlqHK4mKEQAh+QQFBQAMACwEACEAJQAVAAAEapDJKYOlOOs9redg6H1hiY2kqaKB6rKcoAIZGgtyCOx1e+OZAWbHczFwwMlgKZwQaS5kTskcEqNJCrNJuZqkwaq1CAKHl5pnyIzZpr0bdlucUcezZ26drMHP0Rt8RhJugy6FhiqAiYp6HBEAIfkEBQUADAAsAAAZAB0AHQAABGCQsUCrlThrbHvfoOSNYTmNlKmubOu+cCwLtLzRuC3huc33s5/uJygNWMLQYIksGpdHDSAGjUoA2KmrKs2+oJuslsXtYltl81iVzojJYNB7FZd74aW57nrfM/R+Z34YZxEAIfkEBQUADAAsAAANABUAJQAABFeQSRnCvDjXnfvcnOeBldiRpYmhqga2awrPdG3TQq7v4u77nZ/QJNTdjsikEjNo2prQGTTamlJV1gEsKwIwp12A9+IMi23iMy09Xqvdbxgbna7N7XE3JgIAIfkECQUADAAsAAAEABUAJQAABFmQyUlpCDXri7WXXPdt3Ehe5immU8la7gvGkiCMIWXvH73zntXkZ5MxiEUZ0nj8MYHMqHRqHFiv2A92u9Vwv6PvlUoum2WANDPNfrHbqTfcJAew6uj32s6KAAA7';
+  var id = createToast$1(opt, img);
+  console.log('id', id);
+  var dom = document.getElementById("".concat(id));
+  var mask = document.getElementById('mask');
+
+  function hide() {
+    dom.parentNode.removeChild(dom);
+    mask.parentNode.removeChild(mask);
+  }
+
+  return {
+    hide: hide
+  };
+};
+
+var dialog = {
+  alert: function alert(opt) {
+    var title = opt.title ? opt.title : '';
+    var message = opt.message ? opt.message : '弹窗内容';
+    var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index: 100; background:rgba(0,0,0,0.4);display:flex; flex-flow: column wrap;align-items: center; justify-content: center;color:#fff;';
+    var dialogStyle = "width:250px;height:155px;background:rgba(255,255,255,1); border-radius:15px;display:flex; flex-flow: column wrap;overflow: hidden;";
+    var titleStyle = "display:flex;align-items: center;justify-content: center;font-size:15px;font-weight:500;color:#0F0F0F;font-weight:500;height:40px;";
+    var spanColor = "font-size:14px;text-align: center; flex:1;color:#808080;font-weight:500;font-size:14px;display:flex;align-items: center;justify-content: center;padding:0 25px;";
+    var titleHtml = title ? '<div style="' + titleStyle + '">' + opt.title + '</div>' : '';
+    var bottomStyle = 'height:49px;color:#00B800;display:flex;align-items: center;justify-content: center;font-weight:bold;font-size:14px;border-top:1px #D5D5D6 solid;';
+    var html = '<div style="' + dialogStyle + '">' + titleHtml + '\
+        <div style="' + spanColor + '">' + message + '</div>\
+        <div style="' + bottomStyle + '" id="alertSure">确定</div>\
+        </div>';
+    var div = document.createElement('div');
+    div.setAttribute('id', 'myAlert');
+    div.setAttribute('style', maskStyle);
+    div.innerHTML = html;
+    document.querySelector('body').appendChild(div);
+    var promise = new Promise(function (resolve, reject) {
+      alertSure.onclick = function () {
+        var alertSure = document.getElementById('alertSure');
+        var myAlert = document.getElementById('myAlert');
+        myAlert.parentNode.removeChild(myAlert);
+        resolve(alertSure);
+      };
+    });
+    return promise;
+  },
+  confirm: function confirm(opt) {
+    var title = opt.title ? opt.title : '';
+    var message = opt.message ? opt.message : '弹窗内容';
+    var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index: 100; background:rgba(0,0,0,0.4);display:flex; flex-flow: column wrap;align-items: center; justify-content: center;color:#fff;';
+    var dialogStyle = "width:250px;height:155px;background:rgba(255,255,255,1); border-radius:15px;display:flex; flex-flow: column wrap;overflow: hidden;";
+    var titleStyle = "display:flex;align-items: center;justify-content: center;font-size:15px;font-weight:500;color:#0F0F0F;font-weight:500;height:40px;";
+    var spanColor = "font-size:14px;text-align: center; flex:1;color:#000;font-weight:500;font-size:14px;display:flex;align-items: center;justify-content: center;padding:0 25px;";
+    var titleHtml = title ? '<div style="' + titleStyle + '">' + opt.title + '</div>' : '';
+    var bottomStyle = 'height:49px;line-height:49px;display:flex;align-items: center;justify-content: center;font-weight:bold;font-size:14px;border-top:1px #EFEFEF solid;';
+    var cancelStyle = 'width:50%;height:49px;text-align: center;color:#333;border-right:1px #EFEFEF solid;';
+    var sureStyle = 'width:50%;height:49px;text-align: center;color:#00B800;';
+    var html = '<div style="' + dialogStyle + '">' + titleHtml + '\
+        <div style="' + spanColor + '">' + message + '</div>\
+        <div style="' + bottomStyle + '">\
+        <div style="' + cancelStyle + '" id="cancelSure">取消</div>\
+        <div style="' + sureStyle + '" id="confirmSure">确认</div>\
+        </div>\
+        </div></div>';
+    var div = document.createElement('div');
+    div.setAttribute('id', 'myConfirm');
+    div.setAttribute('style', maskStyle);
+    div.innerHTML = html;
+    document.querySelector('body').appendChild(div);
+    var promise = new Promise(function (resolve, reject) {
+      confirmSure.onclick = function () {
+        var confirmSure = document.getElementById('confirmSure');
+        var myConfirm = document.getElementById('myConfirm');
+        myConfirm.parentNode.removeChild(myConfirm);
+        resolve(confirmSure);
+      };
+
+      cancelSure.onclick = function () {
+        var cancelSure = document.getElementById('cancelSure');
+        var myConfirm = document.getElementById('myConfirm');
+        myConfirm.parentNode.removeChild(myConfirm);
+        reject(cancelSure);
+      };
+    });
+    return promise;
+  }
+};
+
+export { dialog, loading, toast };

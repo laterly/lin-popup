@@ -1,0 +1,12 @@
+{
+  "name": "lin-popup",
+  "version": "1.0.4",
+  "description": "popup弹窗",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

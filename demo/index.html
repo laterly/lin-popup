@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body,html{
+        body,
+        html {
             margin: 0 10px;
         }
-        button{
+
+        button {
             width: 100px;
             height: 30px;
             line-height: 30px;
@@ -22,27 +25,72 @@
         }
     </style>
 </head>
+
 <body>
     <h3>1.toast提示</h3>
     <button onclick="toastMain()">普通</button>
     <button onclick="toastSuccess()">成功</button>
     <button onclick="toastWarning()">警告</button>
     <button onclick="toastError()">失败</button>
-    <script src='lin.popup.min.js'></script>
+    <h3>2.loading加载</h3>
+    <button onclick="loadingMain()">loading加载</button>
+    <h3>3.dialog</h3>
+    <button onclick="dialogAlert()">dialog确定</button>
+    <button onclick="dialogConfirm()">dialog询问</button>
+    <button onclick="dialogTitle()">dialog无标题</button>
+    <script src='js/lin.popup.min.js'></script>
     <script>
-        console.log('toast',toast);
-        function toastMain(){
+        function toastMain() {
             toast.msg('普通toast');
         }
-        function toastSuccess(){
+
+        function toastSuccess() {
             toast.success('成功toast');
         }
-        function toastWarning(){
+
+        function toastWarning() {
             toast.warning('警告toast');
         }
-        function toastError(){
+
+        function toastError() {
             toast.error('失败toast');
+        }
+
+        function loadingMain() {
+            var load = loading('正在加载');
+            setTimeout(function () {
+                load.hide();
+            }, 1200)
+        }
+
+        function dialogAlert() {
+            dialog.alert({
+                title: '标题',
+                message: '这里消息内容'
+            }).then(() => {
+                toast.msg('确定');
+            })
+        }
+        function dialogConfirm() {
+            dialog.confirm({
+                title: '标题',
+                message: '这里消息内容'
+            }).then(() => {
+                toast.msg('确定');
+            }).catch(()=>{
+                toast.msg('取消');
+            })
+        }
+        function dialogTitle() {
+            dialog.confirm({
+                message: '这里消息内容'
+            }).then(() => {
+                toast.msg('确定');
+            }).catch(()=>{
+                toast.msg('取消');
+            })
         }
     </script>
 </body>
+
 </html>

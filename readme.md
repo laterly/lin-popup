@@ -1,5 +1,5 @@
 # lin-popup
-封装移动端弹窗组件，toast、dialog、loading，支持es6
+封装移动端弹窗组件，toast、dialog、loading，支持es6,支持srcipt标签引入
 ```
 npm i lin-popup -D
 ```
@@ -7,7 +7,7 @@ npm i lin-popup -D
 ```
 import { toast } from 'lin-popup';
 ```
-- 示例
+- 示例（可参考 [demo.html](http://htmlpreview.github.io/?https://github.com/laterly/lin-popup/blob/master/demo/index.html) ）
 ```
 toast.msg({
     text: '正在加载',
@@ -27,7 +27,7 @@ toast.error('失败');
 ```
 import { loading } from 'lin-popup';
 ```
-- 示例
+- 示例（可参考 [demo.html](http://htmlpreview.github.io/?https://github.com/laterly/lin-popup/blob/master/demo/index.html) ）
 ```
 let load=loading('正在加载');
 setTimeout(()=>{
@@ -39,7 +39,7 @@ setTimeout(()=>{
 ```
 import { dialog } from 'lin-popup';
 ```
-- 示例
+- 示例（可参考 [demo.html](http://htmlpreview.github.io/?https://github.com/laterly/lin-popup/blob/master/demo/index.html) ）
 ```
 1.
 dialog.confirm({
