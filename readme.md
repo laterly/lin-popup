@@ -34,3 +34,41 @@ setTimeout(()=>{
   load.hide();
 },3000)
 ```
+
+## 3.dialog
+```
+import { dialog } from 'lin-popup';
+```
+- 示例
+```
+1.
+dialog.confirm({
+  title:'标题',
+  message:'这里是内容消息'
+}).then(()=>{
+  console.log('确认');
+}).catch(()=>{
+  console.log('取消');
+})
+//不写title
+dialog.confirm({
+  message:'这里是内容消息'
+}).then(()=>{
+  console.log('确认');
+}).catch(()=>{
+  console.log('取消');
+})
+2.
+dialog.alert({
+  title:'标题',
+  message:'这里是内容消息'
+}).then(()=>{
+   console.log('确认');
+})
+//不写标题
+dialog.alert({
+  message:'这里是内容消息'
+}).then(()=>{
+   console.log('确认');
+})
+```

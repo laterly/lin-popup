@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.toast = exports.loading = void 0;
+exports.toast = exports.loading = exports.dialog = void 0;
 
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
@@ -371,12 +371,84 @@ var loading = function loading(opt) {
 };
 
 exports.loading = loading;
+var dialog = {
+  alert: function alert(opt) {
+    var title = opt.title ? opt.title : '';
+    var message = opt.message ? opt.message : '弹窗内容';
+    var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index: 100; background:rgba(0,0,0,0.4);display:flex; flex-flow: column wrap;align-items: center; justify-content: center;color:#fff;';
+    var dialogStyle = "width:250px;height:155px;background:rgba(255,255,255,1); border-radius:15px;display:flex; flex-flow: column wrap;overflow: hidden;";
+    var titleStyle = "display:flex;align-items: center;justify-content: center;font-size:15px;font-weight:500;color:#0F0F0F;font-weight:500;height:40px;";
+    var spanColor = "font-size:14px;text-align: center; flex:1;color:#808080;font-weight:500;font-size:14px;display:flex;align-items: center;justify-content: center;padding:0 25px;";
+    var titleHtml = title ? '<div style="' + titleStyle + '">' + opt.title + '</div>' : '';
+    var bottomStyle = 'height:49px;color:#00B800;display:flex;align-items: center;justify-content: center;font-weight:bold;font-size:14px;border-top:1px #D5D5D6 solid;';
+    var html = '<div style="' + dialogStyle + '">' + titleHtml + '\
+        <div style="' + spanColor + '">' + message + '</div>\
+        <div style="' + bottomStyle + '" id="alertSure">确定</div>\
+        </div>';
+    var div = document.createElement('div');
+    div.setAttribute('id', 'myAlert');
+    div.setAttribute('style', maskStyle);
+    div.innerHTML = html;
+    document.querySelector('body').appendChild(div);
+    var promise = new Promise(function (resolve, reject) {
+      alertSure.onclick = function () {
+        var alertSure = document.getElementById('alertSure');
+        var myAlert = document.getElementById('myAlert');
+        myAlert.parentNode.removeChild(myAlert);
+        resolve(alertSure);
+      };
+    });
+    return promise;
+  },
+  confirm: function confirm(opt) {
+    var title = opt.title ? opt.title : '';
+    var message = opt.message ? opt.message : '弹窗内容';
+    var maskStyle = 'width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index: 100; background:rgba(0,0,0,0.4);display:flex; flex-flow: column wrap;align-items: center; justify-content: center;color:#fff;';
+    var dialogStyle = "width:250px;height:155px;background:rgba(255,255,255,1); border-radius:15px;display:flex; flex-flow: column wrap;overflow: hidden;";
+    var titleStyle = "display:flex;align-items: center;justify-content: center;font-size:15px;font-weight:500;color:#0F0F0F;font-weight:500;height:40px;";
+    var spanColor = "font-size:14px;text-align: center; flex:1;color:#000;font-weight:500;font-size:14px;display:flex;align-items: center;justify-content: center;padding:0 25px;";
+    var titleHtml = title ? '<div style="' + titleStyle + '">' + opt.title + '</div>' : '';
+    var bottomStyle = 'height:49px;line-height:49px;display:flex;align-items: center;justify-content: center;font-weight:bold;font-size:14px;border-top:1px #EFEFEF solid;';
+    var cancelStyle = 'width:50%;height:49px;text-align: center;color:#333;border-right:1px #EFEFEF solid;';
+    var sureStyle = 'width:50%;height:49px;text-align: center;color:#00B800;';
+    var html = '<div style="' + dialogStyle + '">' + titleHtml + '\
+        <div style="' + spanColor + '">' + message + '</div>\
+        <div style="' + bottomStyle + '">\
+        <div style="' + cancelStyle + '" id="cancelSure">取消</div>\
+        <div style="' + sureStyle + '" id="confirmSure">确认</div>\
+        </div>\
+        </div></div>';
+    var div = document.createElement('div');
+    div.setAttribute('id', 'myConfirm');
+    div.setAttribute('style', maskStyle);
+    div.innerHTML = html;
+    document.querySelector('body').appendChild(div);
+    var promise = new Promise(function (resolve, reject) {
+      confirmSure.onclick = function () {
+        var confirmSure = document.getElementById('confirmSure');
+        var myConfirm = document.getElementById('myConfirm');
+        myConfirm.parentNode.removeChild(myConfirm);
+        resolve(confirmSure);
+      };
+
+      cancelSure.onclick = function () {
+        var cancelSure = document.getElementById('cancelSure');
+        var myConfirm = document.getElementById('myConfirm');
+        myConfirm.parentNode.removeChild(myConfirm);
+        reject(cancelSure);
+      };
+    });
+    return promise;
+  }
+};
+exports.dialog = dialog;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _bundle = require("./dist/bundle");
 
 console.log("111");
+
 // toast.msg('哈哈哈111');
 // toast.success('哈哈哈');
 // toast.warning('哈哈哈1');
@@ -394,16 +466,29 @@ console.log("111");
 // import {
 //   loading
 // } from "lin-popup";
-var load = (0, _bundle.loading)('正在加载');
-console.log('load', load);
-setTimeout(function () {
-  load.hide();
-}, 3000); // load.hide();
+// let load=loading('正在加载');
+// console.log('load',load);
+// setTimeout(function(){
+//   load.hide();
+// },3000)
+// load.hide();
 // import {
 //   dialog
 // } from "lin-popup";
 // dialog.alert()
-//dialog.confirm
+_bundle.dialog.confirm({
+  title: '标题',
+  message: '你好啊'
+}).then(function () {
+  console.log('确认');
+}).catch(function () {
+  console.log('取消');
+}); // dialog.alert({
+//   title:'标题',
+//   message:'你好啊'
+// }).then(()=>{
+//   console.log('确认');
+// })
 },{"./dist/bundle":"dist/bundle.js"}],"node_modules/_parcel-bundler@1.12.3@parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
